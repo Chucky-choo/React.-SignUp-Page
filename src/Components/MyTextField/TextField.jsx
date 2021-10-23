@@ -1,18 +1,24 @@
 import {useField} from "formik";
-import {useStyles} from "./FildStyle";
+import {styles, useClasses} from "./FildStyle";
+import {useStyles} from "../PasswordField/PasswordStyle";
 
 
-const MyTextField = ({label, errorMessage, ...props}) => {
+
+const TextField = ({label, errorMessage, ...props}) => {
 	const c = useStyles()
+	const classes = useClasses()
 
 	const [field, meta] = useField(props);
 	return (
 		<label className={c.root}>
-			{label}
+			<span className={c.label}>
+				{label}
+			</span>
 			<input
 				{...field}
 				{...props}
-				className={c.in}
+				className={classes.in}
+				style={styles(meta)}
 			/>
 			{meta.touched && meta.error ? (
 				<p>{meta.error}</p>
@@ -21,4 +27,4 @@ const MyTextField = ({label, errorMessage, ...props}) => {
 	);
 };
 
-export default MyTextField
+export default TextField
