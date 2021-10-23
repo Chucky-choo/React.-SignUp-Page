@@ -29,7 +29,7 @@ const Footer = () => {
 		>
 			<Form
 				className={classes.form}
-				// autoComplete="off"
+				autoComplete="off"
 			>
 				<SelectGender/>
 				<TextField

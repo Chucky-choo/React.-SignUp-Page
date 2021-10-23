@@ -19,7 +19,6 @@ export const useClasses = makeStyles({
 			color: '#C1C1C1',
 		},
 
-
 	},
 
 	'@media (max-width: 767px)': {
@@ -36,6 +35,7 @@ export const styles = (meta) => {
 	let combo = {}
 	if (meta.touched && meta.error) {
 		combo.border = '1px solid #D23737'
+		combo.color = '#D23737'
 	} else if (meta.touched && !meta.error) {
 		combo.border = '1px solid #87D78B'
 	}

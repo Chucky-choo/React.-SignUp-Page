@@ -29,6 +29,7 @@ const PasswordField = ({label, errorMessage, ...props}) => {
 					type={showPassword ? 'text' : 'password'}
 					{...field}
 					className={c.in}
+					style={meta.touched && meta.error?{color: '#D23737'}:null}
 				/>
 				<IconButton
 					aria-label="toggle password visibility"
